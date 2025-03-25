@@ -1,0 +1,15 @@
+{%macro dealform(form, item=[] )%}
+
+    
+    {{form.product_input(placeholder="Enter deal title")}}
+
+    
+    {{form.description(placeholder="Paste some product description or details from product site for better accuracy...")}}
+    <!-- <label for="description">Description</label>
+        <textarea id="description" name="description" required
+            placeholder="Description of the deal under 500 characters" maxlength="500"></textarea> -->
+
+    <button id="search-button">Generate Details</button>
+
+
+{%endmacro%}

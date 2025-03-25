@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title [:45] | title }} - Procon AI</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+<body class="dark-theme">
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>ProCon AI</h1>
+                    <p class="tagline">Generated the SEO friendly details of the product {{title}}</p>
+                    <!-- <div class="header-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500K+</div>
+                            <div class="stat-label">Products Analyzed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Happy Users</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section id="result-section" >
+            <h2>Generated Results: <span id="product-name"></span></h2>
+            <div class="result-grid">
+                <div class="result-card" id="pros-result">
+                    <h3>Pros</h3>
+                    <ul id="pros-list">
+                        {% for pro in data["pros"] %}
+                            <li>{{pro}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="result-card" id="cons-result">
+                    <h3>Cons</h3>
+                    <ul id="cons-list">
+                        {% for con in data["cons"] %}
+                            <li>{{con}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="result-card" id="details-result">
+                    <h3>Product Description</h3>
+                    <div id="details-content">
+                        <p>{{data["description"]}}</p>
+                    </div>
+                </div>
+                <div class="result-card" id="why-buy-result">
+                    <h3>Why Buy</h3>
+                    <div id="why-buy-content">
+                        <p>{{data["why_to_buy"]}}</p>
+                    </div>
+                </div>
+                <div class="result-card" id="alternatives-result">
+                    <h3>Similar Products</h3>
+                    <ul id="alternatives-list">
+                        {% for product in data["similar-products"] %}
+                            <li>{{product}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ProCon - Product Comparison Tool. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
